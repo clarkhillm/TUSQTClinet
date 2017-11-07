@@ -26,11 +26,14 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    tusuploader.cpp
+    tusuploader.cpp \
+    progresswidget.cpp
 
 HEADERS += \
         mainwindow.h \
-    tusuploader.h
+    tusuploader.h \
+    progresswidget.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+    progresswidget.ui

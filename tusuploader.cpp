@@ -106,6 +106,8 @@ void TUSUploader::onPatchFinished()
     qDebug() << "patch finished" << reply->readAll();
     file->close();
     file->deleteLater();
+
+    emit uploadFinished(filePath);
 }
 
 void TUSUploader::onNetworkError(QNetworkReply::NetworkError code)
@@ -149,5 +151,5 @@ void TUSUploader::onProgress(qint64 bytesSent, qint64 bytesTotal)
     int percent = actualSent * 100 / size;
 
     qDebug() << bytesTotal << actualSent << percent << speed << unit;
-    emit uploadProgress(bytesTotal, actualSent, percent, speed, unit);
+    emit uploadProgress(filePath, bytesTotal, actualSent, percent, speed, unit);
 }

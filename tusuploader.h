@@ -47,7 +47,8 @@ public:
     QNetworkAccessManager* getManager();
 
 signals:
-    void uploadProgress(qint64 total, qint64 actualSent, int percent, double speed, QString unit);
+    void uploadProgress(QString filePath, qint64 total, qint64 actualSent, int percent, double speed, QString unit);
+    void uploadFinished(QString filePath);
 
 private slots:
     void onCreateFinished();
